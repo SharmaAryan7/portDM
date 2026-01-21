@@ -1,22 +1,20 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom"; // Link is used here
 import { motion } from "motion/react";
-import { ArrowLeft, Eye } from "lucide-react";
+import { ArrowLeft, Eye, FileText } from "lucide-react";
 import { servicesData } from "../../data/portfolioData";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card";
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "../ui/dialog";
 
 export function ServiceDetail() {
-    const { id } = useParams(); // Get the ID from the URL (e.g., "seo")
+    const { id } = useParams();
     const [service, setService] = useState(null);
-    const [selectedPdf, setSelectedPdf] = useState(null); // State to hold the PDF URL for the modal
+    const [selectedPdf, setSelectedPdf] = useState(null);
 
     useEffect(() => {
-        // Find the service data that matches the URL ID
         const foundService = servicesData.find((s) => s.id === id);
         setService(foundService);
-        // Scroll to top when page loads
         window.scrollTo(0, 0);
     }, [id]);
 
@@ -29,24 +27,33 @@ export function ServiceDetail() {
             <div className="max-w-7xl mx-auto">
 
                 {/* Back Button */}
-                <Link to="/">
-                    <Button variant="ghost" className="mb-8 text-gray-400 hover:text-white pl-0">
-                        <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
-                    </Button>
-                </Link>
+                <div className="w-full flex justify-start mb-8">
+                    {/* 👇 CHANGED: Links to the #services section on the home page */}
+                    <Link to="/#services">
+                        <Button variant="ghost" className="text-gray-400 hover:text-white pl-0">
+                            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Services
+                        </Button>
+                    </Link>
+                </div>
 
-                {/* Page Title */}
+                {/* Page Title & Description */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-16"
+                    className="mb-16 text-center flex flex-col items-center"
                 >
-                    <div className={`inline-block p-3 rounded-xl bg-gradient-to-r ${service.gradient} mb-6`}>
-                        <service.icon className="w-8 h-8 text-white" />
+                    <div className={`inline-flex items-center justify-center p-4 rounded-2xl bg-gradient-to-r ${service.gradient} mb-6 shadow-lg shadow-purple-500/20`}>
+                        <service.icon className="w-10 h-10 text-white" />
                     </div>
-                    <h1 className="text-5xl md:text-6xl font-bold mb-4">{service.title} Projects</h1>
-                    <p className="text-xl text-gray-400 max-w-2xl">{service.description}</p>
+
+                    <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                        {service.title} Projects
+                    </h1>
+
+                    <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        {service.description}
+                    </p>
                 </motion.div>
 
                 {/* Projects Grid */}
@@ -59,28 +66,30 @@ export function ServiceDetail() {
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                             >
-                                <Card className="h-full border-slate-800 bg-slate-900/50 hover:border-purple-500/30 overflow-hidden flex flex-col">
-                                    {/* Project Image */}
-                                    <div className="h-48 w-full overflow-hidden">
+                                <Card className="h-full border-slate-800 bg-slate-900/50 hover:border-purple-500/30 overflow-hidden flex flex-col group">
+                                    <div className="h-56 w-full overflow-hidden relative">
+                                        <div className="absolute inset-0 bg-purple-500/10 group-hover:bg-transparent transition-colors z-10" />
                                         <img
                                             src={project.image}
                                             alt={project.title}
-                                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                     </div>
 
                                     <CardHeader>
-                                        <CardTitle className="text-xl text-white">{project.title}</CardTitle>
+                                        <CardTitle className="text-2xl text-white group-hover:text-purple-400 transition-colors">
+                                            {project.title}
+                                        </CardTitle>
                                     </CardHeader>
 
                                     <CardContent className="flex-1 flex flex-col justify-between">
-                                        <CardDescription className="text-gray-400 mb-6 text-sm leading-relaxed">
+                                        <CardDescription className="text-gray-400 mb-8 text-base leading-relaxed">
                                             {project.description}
                                         </CardDescription>
 
                                         <Button
-                                            variant="gradient"
-                                            className="w-full"
+                                            variant="outline"
+                                            className="w-full border-slate-700 hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all"
                                             onClick={() => setSelectedPdf(project.pdfUrl)}
                                         >
                                             <Eye className="mr-2 h-4 w-4" /> View Case Study
@@ -90,25 +99,35 @@ export function ServiceDetail() {
                             </motion.div>
                         ))
                     ) : (
-                        <div className="col-span-full text-center py-20 text-gray-500 bg-slate-900/30 rounded-2xl border border-slate-800 border-dashed">
-                            No projects added for this category yet.
+                        <div className="col-span-full py-24 text-center">
+                            <div className="inline-block p-6 rounded-full bg-slate-900/50 border border-slate-800 mb-4">
+                                <FileText className="w-8 h-8 text-gray-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold text-gray-300 mb-2">No Projects Yet</h3>
+                            <p className="text-gray-500">We are currently updating this category.</p>
                         </div>
                     )}
                 </div>
             </div>
 
-            {/* PDF Viewer Modal (Dialog) */}
             <Dialog open={!!selectedPdf} onOpenChange={(open) => !open && setSelectedPdf(null)}>
-                <DialogContent className="max-w-5xl h-[85vh] bg-slate-950 border-slate-800 p-0 overflow-hidden flex flex-col">
-                    <DialogHeader className="p-4 bg-slate-900 border-b border-slate-800">
-                        <DialogTitle className="text-white">Project Case Study</DialogTitle>
-                        <DialogDescription className="text-gray-400">Viewing PDF documentation</DialogDescription>
+                <DialogContent className="max-w-6xl h-[90vh] bg-slate-950 border-slate-800 p-0 overflow-hidden flex flex-col rounded-xl">
+                    <DialogHeader className="p-4 bg-slate-900/80 backdrop-blur-sm border-b border-slate-800 flex-none">
+                        <div className="flex items-center gap-3">
+                            <div className={`p-2 rounded-lg bg-gradient-to-r ${service.gradient}`}>
+                                <FileText className="w-4 h-4 text-white" />
+                            </div>
+                            <div>
+                                <DialogTitle className="text-white text-lg">Case Study Viewer</DialogTitle>
+                                <DialogDescription className="text-gray-400 text-xs">Viewing secure document</DialogDescription>
+                            </div>
+                        </div>
                     </DialogHeader>
 
-                    <div className="flex-1 bg-slate-100 w-full h-full">
+                    <div className="flex-1 bg-slate-900 w-full h-full relative">
                         {selectedPdf && (
                             <iframe
-                                src={`${selectedPdf}#toolbar=0`}
+                                src={`${selectedPdf}#toolbar=0&view=FitH`}
                                 className="w-full h-full"
                                 title="Project PDF"
                             />
