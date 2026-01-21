@@ -181,7 +181,7 @@ export const certificatesData = [
         icon: Award,
         title: "Google Ads Certified",
         issuer: "Google",
-        year: "2024",
+        year: "2025",
         color: "from-blue-500 to-cyan-500",
         // Add image URL here
         image: "https://images.unsplash.com/photo-1589330694653-4a8b74375b0e?auto=format&fit=crop&q=80&w=1000",
@@ -190,7 +190,7 @@ export const certificatesData = [
         icon: BookOpen,
         title: "HubSpot Inbound Marketing",
         issuer: "HubSpot Academy",
-        year: "2024",
+        year: "2025",
         color: "from-orange-500 to-red-500",
         image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&q=80&w=1000",
     },
@@ -198,7 +198,7 @@ export const certificatesData = [
         icon: TrendingUp,
         title: "Meta Blueprint Certified",
         issuer: "Meta",
-        year: "2023",
+        year: "2024",
         color: "from-purple-500 to-pink-500",
         image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1000",
     },
@@ -206,7 +206,7 @@ export const certificatesData = [
         icon: Users,
         title: "LinkedIn Marketing Expert",
         issuer: "LinkedIn",
-        year: "2023",
+        year: "2024",
         color: "from-indigo-500 to-blue-600",
         image: "https://images.unsplash.com/photo-1629904853716-6b2946eafecd?auto=format&fit=crop&q=80&w=1000",
     },
@@ -217,25 +217,26 @@ export const contactData = {
         {
             icon: Mail,
             label: "Email",
-            value: "hello@marketingpro.com",
+            value: "agency@neuroworks.online",
             color: "from-purple-500 to-purple-700",
         },
         {
             icon: Phone,
             label: "Phone",
-            value: "+1 (555) 123-4567",
+            value: "+91 6398498216",
             color: "from-pink-500 to-pink-700",
         },
         {
             icon: MapPin,
             label: "Location",
-            value: "San Francisco, CA",
+            value: "Dubai, UAE",
             color: "from-blue-500 to-blue-700",
         },
     ],
     socials: [
         { icon: Linkedin, href: "#", label: "LinkedIn" },
         { icon: Twitter, href: "#", label: "Twitter" },
-        { icon: Instagram, href: "#", label: "Instagram" },
-    ],
+        { icon: Instagram, href: "https://www.instagram.com/neuro.works.ai.agency/#", label: "Instagram" },
+    ]
+
 };

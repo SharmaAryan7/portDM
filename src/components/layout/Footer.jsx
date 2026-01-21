@@ -5,8 +5,7 @@ export function Footer() {
         <footer className="bg-slate-950 text-white py-8 border-t border-slate-800">
             <div className="max-w-7xl mx-auto px-6 text-center">
                 <p className="text-gray-400 flex items-center justify-center gap-2">
-                    © 2026 Marketing Pro. Made with{" "}
-                    <Heart className="w-4 h-4 text-red-500 fill-red-500" /> for digital
+                    © NeuroWorksAI | Shivam Sharma for digital
                     excellence
                 </p>
             </div>
