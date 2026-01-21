@@ -27,7 +27,7 @@ export const heroData = {
 
 export const navbarData = {
     logo: {
-        text: "Portfolio.",
+        text: "Shivam Sharma",
         icon: Command,
     },
     links: [
@@ -117,15 +117,6 @@ export const servicesData = [
         description:
             "Maximize ROI with targeted PPC campaigns across Google, Facebook, and LinkedIn.",
         gradient: "from-blue-500 to-blue-700",
-        projects: [],
-    },
-    {
-        id: "branding",
-        icon: Palette,
-        title: "Branding",
-        description:
-            "Create a memorable brand identity that resonates with your target audience.",
-        gradient: "from-indigo-500 to-indigo-700",
         projects: [],
     },
     {
