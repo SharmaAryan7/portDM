@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom"; // Import Link
 import { servicesData } from "../../data/portfolioData";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "../ui/card";
 
@@ -26,31 +27,38 @@ export function Services() {
                         const Icon = service.icon;
                         return (
                             <motion.div
-                                key={service.title}
+                                key={service.id}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
+                                whileHover={{ y: -8 }}
                             >
-                                <Card className="h-full border-slate-800 bg-slate-900/50 hover:bg-slate-900">
-                                    <CardHeader>
-                                        <motion.div
-                                            className={`bg-gradient-to-r ${service.gradient} w-14 h-14 rounded-lg flex items-center justify-center mb-4`}
-                                            whileHover={{ rotate: 360 }}
-                                            transition={{ duration: 0.6 }}
-                                        >
-                                            <Icon className="w-7 h-7 text-white" />
-                                        </motion.div>
-                                        <CardTitle className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">
-                                            {service.title}
-                                        </CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <CardDescription className="text-gray-400 leading-relaxed text-base">
-                                            {service.description}
-                                        </CardDescription>
-                                    </CardContent>
-                                </Card>
+                                {/* Wrap Card in Link */}
+                                <Link to={`/service/${service.id}`} className="block h-full">
+                                    <Card className="h-full border-slate-800 bg-slate-900/50 hover:bg-slate-900 transition-colors cursor-pointer group">
+                                        <CardHeader>
+                                            <motion.div
+                                                className={`bg-gradient-to-r ${service.gradient} w-14 h-14 rounded-lg flex items-center justify-center mb-4`}
+                                                whileHover={{ rotate: 360 }}
+                                                transition={{ duration: 0.6 }}
+                                            >
+                                                <Icon className="w-7 h-7 text-white" />
+                                            </motion.div>
+                                            <CardTitle className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">
+                                                {service.title}
+                                            </CardTitle>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <CardDescription className="text-gray-400 leading-relaxed text-base">
+                                                {service.description}
+                                            </CardDescription>
+                                            <div className="mt-4 text-purple-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
+                                                View Projects →
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                </Link>
                             </motion.div>
                         );
                     })}

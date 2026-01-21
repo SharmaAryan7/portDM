@@ -1,12 +1,28 @@
 import {
-    Search, Share2, MousePointerClick, Palette, FileText,
-    Award, BookOpen, TrendingUp, Users, Target, Zap,
-    Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Command
+    Search,
+    Share2,
+    MousePointerClick,
+    Palette,
+    FileText,
+    Award,
+    BookOpen,
+    TrendingUp,
+    Users,
+    Target,
+    Zap,
+    Mail,
+    Phone,
+    MapPin,
+    Linkedin,
+    Twitter,
+    Instagram,
+    Command,
 } from "lucide-react";
 
 export const heroData = {
     title: "Transform Your Brand",
-    subtitle: "We craft data-driven digital marketing strategies that elevate your business and drive real results in the modern landscape."
+    subtitle:
+        "We craft data-driven digital marketing strategies that elevate your business and drive real results in the modern landscape.",
 };
 
 export const navbarData = {
@@ -21,7 +37,7 @@ export const navbarData = {
         { name: "Clients", href: "#clients" },
         { name: "Certificates", href: "#certificates" },
         { name: "Contact", href: "#contact" },
-    ]
+    ],
 };
 
 export const valuesData = [
@@ -38,40 +54,88 @@ export const valuesData = [
     {
         icon: Zap,
         title: "Innovation First",
-        description: "We stay ahead with cutting-edge strategies and technologies.",
+        description:
+            "We stay ahead with cutting-edge strategies and technologies.",
     },
 ];
 
 export const servicesData = [
     {
-        icon: Search,
+        id: "seo",
+        icon: Search, // Fixed typo from 'Searchs'
         title: "SEO",
-        description: "Boost your search rankings and drive organic traffic with our proven SEO strategies.",
+        description:
+            "Boost your search rankings and drive organic traffic with our proven SEO strategies.",
         gradient: "from-purple-500 to-purple-700",
+        projects: [
+            {
+                id: 1,
+                title: "E-Commerce Traffic Boost",
+                description:
+                    "Increased organic traffic by 150% for a major fashion retailer using technical SEO audits.",
+                image:
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+                pdfUrl:
+                    "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+            },
+            {
+                id: 2,
+                title: "Local SEO Domination",
+                description:
+                    "Helped a local dental clinic rank #1 in Google Maps for 5 key search terms.",
+                image:
+                    "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=800",
+                pdfUrl:
+                    "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+            },
+        ],
     },
     {
+        id: "social-media",
         icon: Share2,
         title: "Social Media Marketing",
-        description: "Engage your audience and build community with compelling social media campaigns.",
+        description:
+            "Engage your audience and build community with compelling social media campaigns.",
         gradient: "from-pink-500 to-pink-700",
+        projects: [
+            {
+                id: 1,
+                title: "Viral Brand Campaign",
+                description:
+                    "Generated 1M+ views on Instagram Reels for a beverage startup.",
+                image:
+                    "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
+                pdfUrl:
+                    "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+            },
+        ],
     },
     {
+        id: "paid-ads",
         icon: MousePointerClick,
         title: "Paid Ads",
-        description: "Maximize ROI with targeted PPC campaigns across Google, Facebook, and LinkedIn.",
+        description:
+            "Maximize ROI with targeted PPC campaigns across Google, Facebook, and LinkedIn.",
         gradient: "from-blue-500 to-blue-700",
+        projects: [],
     },
     {
+        id: "branding",
         icon: Palette,
         title: "Branding",
-        description: "Create a memorable brand identity that resonates with your target audience.",
+        description:
+            "Create a memorable brand identity that resonates with your target audience.",
         gradient: "from-indigo-500 to-indigo-700",
+        projects: [],
     },
     {
+        id: "content",
         icon: FileText,
         title: "Content Marketing",
-        description: "Tell your story with strategic content that educates, engages, and converts.",
+        description:
+            "Tell your story with strategic content that educates, engages, and converts.",
         gradient: "from-violet-500 to-violet-700",
+        projects: [],
     },
 ];
 
@@ -86,24 +150,30 @@ export const clientsData = {
     ],
     testimonials: [
         {
-            quote: "Working with this team has been transformative for our business. Our organic traffic increased by 300% in just 6 months!",
+            quote:
+                "Working with this team has been transformative for our business. Our organic traffic increased by 300% in just 6 months!",
             author: "Sarah Johnson",
             position: "CEO, TechCorp",
-            image: "https://images.unsplash.com/photo-1496180470114-6ef490f3ff22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdvbWFuJTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc2ODc0NTAzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+            image:
+                "https://images.unsplash.com/photo-1496180470114-6ef490f3ff22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdvbWFuJTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc2ODc0NTAzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
         },
         {
-            quote: "The ROI from their PPC campaigns exceeded our expectations. Professional, data-driven, and results-focused.",
+            quote:
+                "The ROI from their PPC campaigns exceeded our expectations. Professional, data-driven, and results-focused.",
             author: "Michael Chen",
             position: "Marketing Director, Innovate",
-            image: "https://images.unsplash.com/photo-1598268012815-ae21095df31b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMG1hbiUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3Njg3NjgyODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+            image:
+                "https://images.unsplash.com/photo-1598268012815-ae21095df31b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMG1hbiUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3Njg3NjgyODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
         },
         {
-            quote: "Their creative approach to social media marketing helped us double our engagement and build a loyal community.",
+            quote:
+                "Their creative approach to social media marketing helped us double our engagement and build a loyal community.",
             author: "Emily Rodriguez",
             position: "Founder, GrowthLab",
-            image: "https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHBvcnRyYWl0fGVufDF8fHx8MTc2ODgwNjY3NHww&ixlib=rb-4.1.0&q=80&w=1080",
+            image:
+                "https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHBvcnRyYWl0fGVufDF8fHx8MTc2ODgwNjY3NHww&ixlib=rb-4.1.0&q=80&w=1080",
         },
-    ]
+    ],
 };
 
 export const certificatesData = [
@@ -113,6 +183,8 @@ export const certificatesData = [
         issuer: "Google",
         year: "2024",
         color: "from-blue-500 to-cyan-500",
+        // Add image URL here
+        image: "https://images.unsplash.com/photo-1589330694653-4a8b74375b0e?auto=format&fit=crop&q=80&w=1000",
     },
     {
         icon: BookOpen,
@@ -120,6 +192,7 @@ export const certificatesData = [
         issuer: "HubSpot Academy",
         year: "2024",
         color: "from-orange-500 to-red-500",
+        image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&q=80&w=1000",
     },
     {
         icon: TrendingUp,
@@ -127,6 +200,7 @@ export const certificatesData = [
         issuer: "Meta",
         year: "2023",
         color: "from-purple-500 to-pink-500",
+        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1000",
     },
     {
         icon: Users,
@@ -134,6 +208,7 @@ export const certificatesData = [
         issuer: "LinkedIn",
         year: "2023",
         color: "from-indigo-500 to-blue-600",
+        image: "https://images.unsplash.com/photo-1629904853716-6b2946eafecd?auto=format&fit=crop&q=80&w=1000",
     },
 ];
 
@@ -162,5 +237,5 @@ export const contactData = {
         { icon: Linkedin, href: "#", label: "LinkedIn" },
         { icon: Twitter, href: "#", label: "Twitter" },
         { icon: Instagram, href: "#", label: "Instagram" },
-    ]
+    ],
 };
