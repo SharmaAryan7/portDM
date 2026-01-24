@@ -19,6 +19,34 @@ import {
     Command,
 } from "lucide-react";
 
+import hubspot from '../assets/hubspot.jpeg'
+import google from '../assets/google.jpeg'
+import pureVida from '../assets/pureVida.jpg'
+import SEO_Audit_pureVida from '../assets/pdfs/SEO_Audit_pureVida.pdf'
+import keyword_reasearch from "../assets/pdfs/keyword_reaserch.pdf"
+import keywordImg from '../assets/keywordImg.png'
+import SocialMediaContenCalendar from "../assets/pdfs/SocialMediaContentCalendar.pdf"
+import socialMediaCalender from '../assets/socialMediaCalender.png'
+import instagramFBpost from '../assets/instagramFBpost.png'
+import InstagramFBpostdesigns from '../assets/pdfs/InstagramFBpostdesigns.pdf'
+import captionWritingSample from '../assets/pdfs/CaptionWritingSamples.pdf'
+import captionWritingImg from '../assets/captionWritingImg.jpg'
+import DaysGrowthImg from '../assets/DaysGrowthImg.webp'
+import GrowthPdf from '../assets/pdfs/DaysGrowthCampaign.pdf'
+import AdBanner from '../assets/pdfs/AdBanners.pdf'
+import AdBannerImg from '../assets/AdBannersImg.png'
+import AdCopyVar from '../assets/pdfs/GoogleAds-AdCopyVariations.pdf'
+import AdCopyVarImg from '../assets/AdCopyVarImg.png'
+import AdCampaignArcImg from '../assets/AdCampaiignArcimg.png'
+import AdCampaignPdf from '../assets/pdfs/GoogleAdsCampaignArchitecture.pdf'
+import BlogArticleImg from '../assets/BlogArticleImg.avif'
+import BlogArticlePdf from '../assets/pdfs/BlogArticle.pdf'
+import WebsiteLandingPageImg from '../assets/websiteLandingPageImg.jpg'
+import WebsiteLandingPage from '../assets/pdfs/WebsiteLandingPage.pdf'
+import EmailNewsletterImg from '../assets/EmailNewsletterImg.jpeg'
+import EmailNewsletterSample from '../assets/pdfs/EmailNewsletterSamples.pdf'
+
+
 export const heroData = {
     title: "Transform Your Brand",
     subtitle:
@@ -70,23 +98,18 @@ export const servicesData = [
         projects: [
             {
                 id: 1,
-                title: "E-Commerce Traffic Boost",
+                title: "Audit Report - Pure Vida",
                 description:
-                    "Increased organic traffic by 150% for a major fashion retailer using technical SEO audits.",
-                image:
-                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-                pdfUrl:
-                    "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                    "Sample SEO audit analyzing technical, on-page, content, and backlink opportunities for an e-commerce brand.",
+                image: pureVida,
+                pdfUrl:SEO_Audit_pureVida,
             },
             {
                 id: 2,
-                title: "Local SEO Domination",
-                description:
-                    "Helped a local dental clinic rank #1 in Google Maps for 5 key search terms.",
-                image:
-                    "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=800",
-                pdfUrl:
-                    "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                title: "Keyword Research",
+                description:"Targeted keyword research and intent mapping for scalable jewelry brand growth.",
+                image:keywordImg,
+                pdfUrl:keyword_reasearch,
             },
         ],
     },
@@ -100,13 +123,31 @@ export const servicesData = [
         projects: [
             {
                 id: 1,
-                title: "Viral Brand Campaign",
-                description:
-                    "Generated 1M+ views on Instagram Reels for a beverage startup.",
-                image:
-                    "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
-                pdfUrl:
-                    "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                title: "Social Media Content Calender",
+                description:"Multichannel social media planning focused on brand storytelling and product visibility.",
+                image:socialMediaCalender,
+                pdfUrl:SocialMediaContenCalendar,
+            },
+            {
+                id: 2,
+                title: "Instagram FB Post Design",
+                description:"Optimized Instagram and Facebook creative assets designed to maximize audience engagement.",
+                image:instagramFBpost,
+                pdfUrl:InstagramFBpostdesigns,
+            },
+            {
+                id: 3,
+                title: "Caption Writing Samples",
+                description:"Diverse multi-platform copy samples ranging from minimalist CTAs to educational storytelling.",
+                image:captionWritingImg,
+                pdfUrl:captionWritingSample,
+            },
+            {
+                id: 4,
+                title: "30 Days Growth Plan",
+                description:"Strategic 30-day roadmap utilizing behavioral psychology to engineer repeatable organic brand spikes.",
+                image:DaysGrowthImg,
+                pdfUrl:GrowthPdf,
             },
         ],
     },
@@ -117,7 +158,29 @@ export const servicesData = [
         description:
             "Maximize ROI with targeted PPC campaigns across Google, Facebook, and LinkedIn.",
         gradient: "from-blue-500 to-blue-700",
-        projects: [],
+        projects: [
+            {
+                id: 1,
+                title: "Ad Banners",
+                description:"Quietly bold ad banners reframing jewelry as a personal ritual rather than consumer noise.",
+                image:AdBannerImg,
+                pdfUrl:AdBanner,
+            },
+            {
+                id: 2,
+                title: "Ad Copy Variation",
+                description:"Strategic search ad copy variations mapped to specific user search intent and triggers.",
+                image:AdCopyVarImg,
+                pdfUrl:AdCopyVar,
+            },
+            {
+                id: 3,
+                title: "Ad Campaign Architecture",
+                description:"Multi-layered account architecture mapping specific keyword themes to high-conversion user mindsets.",
+                image:AdCampaignArcImg,
+                pdfUrl:AdCampaignPdf,
+            },
+        ],
     },
     {
         id: "content",
@@ -126,7 +189,29 @@ export const servicesData = [
         description:
             "Tell your story with strategic content that educates, engages, and converts.",
         gradient: "from-violet-500 to-violet-700",
-        projects: [],
+        projects: [
+           {
+                id: 1,
+                title: "Blog Article ",
+                description:"Educational blog articles reframing jewelry as personal expression to drive customer loyalty.",
+                image:BlogArticleImg,
+                pdfUrl:BlogArticlePdf,
+            },
+            {
+                id: 2,
+                title: "Website Landing Page",
+                description:"Intent-driven landing page optimization utilizing emotional storytelling and strategic value propositions.",
+                image:WebsiteLandingPageImg,
+                pdfUrl:WebsiteLandingPage,
+            },
+            {
+                id: 3,
+                title: "Email Newsletter Sample",
+                description:"Emotionally resonant email sequences focused on brand intimacy, retention, and human-centric storytelling",
+                image:EmailNewsletterImg,
+                pdfUrl:EmailNewsletterSample,
+            },
+        ],
     },
 ];
 
@@ -174,8 +259,7 @@ export const certificatesData = [
         issuer: "Google",
         year: "2025",
         color: "from-blue-500 to-cyan-500",
-        // Add image URL here
-        image: "https://images.unsplash.com/photo-1589330694653-4a8b74375b0e?auto=format&fit=crop&q=80&w=1000",
+        image: google,
     },
     {
         icon: BookOpen,
@@ -183,7 +267,7 @@ export const certificatesData = [
         issuer: "HubSpot Academy",
         year: "2025",
         color: "from-orange-500 to-red-500",
-        image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&q=80&w=1000",
+        image: hubspot,
     },
     {
         icon: TrendingUp,
@@ -191,7 +275,7 @@ export const certificatesData = [
         issuer: "Meta",
         year: "2024",
         color: "from-purple-500 to-pink-500",
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1000",
+        image: "",
     },
     {
         icon: Users,
@@ -199,7 +283,7 @@ export const certificatesData = [
         issuer: "LinkedIn",
         year: "2024",
         color: "from-indigo-500 to-blue-600",
-        image: "https://images.unsplash.com/photo-1629904853716-6b2946eafecd?auto=format&fit=crop&q=80&w=1000",
+        image: "",
     },
 ];
 
